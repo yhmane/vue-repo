@@ -3,7 +3,7 @@
 * v-if
 * v-else-if
 * v-else
-#### 일반적인 조건문과 같다.v-if와 v-else-if엔 비교 필드값이 들어 오지만, v-else는 없다.
+#### 일반적인 조건문과 같음<br/> v-if와 v-else-if엔 비교 필드값이 들어 오지만, v-else는 없음
 
 ```html
 <div id="app">
@@ -24,7 +24,7 @@ const app = new Vue({
 ```
 
 * v-show
-#### true일 경우 show하여 준다. false일 경우에는 display:none이 됨
+#### true일 경우 show 하여 줌<br/> false일 경우에는 display:none이 됨
 
 ```html
 <div id="app">
@@ -45,7 +45,7 @@ const app = new Vue({
 })
 ```
 
-#### v-if와 v-show의 차이는 Rendering에 있다.<br/> v-if는 lazy rendering을 하기 때문에 true일 경우에만 객체를 렌더링 함.<br /> 자주 바뀌는 경우라면  v-show를 runtime에 바뀌지 않는다면 v-if를 사용하는 것이 적합
+#### v-if와 v-show의 차이는 Rendering에 있음<br/> v-if는 lazy rendering을 하기 때문에 true일 경우에만 객체를 렌더링 함<br /> 자주 바뀌는 경우라면  v-show를 runtime에 바뀌지 않는다면 v-if를 사용하는 것이 적합
 
 
 
