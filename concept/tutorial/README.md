@@ -1,6 +1,6 @@
 ## 시작하기
 
-#### Vue.js는 ECHMAScript5를 지원하기 때문에 IE8 버전을 지원하지 않음 <br/>하지만, 모든 ECHMAScript5 호환 브라우저를 지원
+#### Vue.js는 ECMAScript5를 지원하기 때문에 IE8 버전을 지원하지 않음 <br/>하지만, 모든 ECMAScript5 호환 브라우저를 지원
 
 * Vue.js script import
 ```javascript
