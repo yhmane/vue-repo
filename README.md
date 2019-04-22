@@ -5,3 +5,4 @@
 * [statement](https://github.com/yhmane/vue-repo/tree/master/concept/statement)
 * [bind](https://github.com/yhmane/vue-repo/tree/master/concept/bind)
 * [event](https://github.com/yhmane/vue-repo/tree/master/concept/event)
+* [component](https://github.com/yhmane/vue-repo/tree/master/concept/component)
