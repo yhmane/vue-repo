@@ -48,7 +48,42 @@ new Vue({
 ## 전달
 #### 부모에서 자식으로 props -> 데이터 전달
 #### 자식이 부모한테 emit -> (message)
-* 하지만 vue는 단방향 통신이고, 자식에 의해 부모가 바뀌는 불상사를 막기 위해 자식이 부모에게 data를 전달할 수 없음. 즉, 하위 컴포넌트의 템플릿에서 상위 데이터를 직접 참조 할 수 없으며 그렇게 해서는 안됨. 데이터는 props 옵션 을 사용하여 하위 컴포넌트로 전달 될 수 있음.
+* 하지만 vue는 단방향 통신이고, 자식에 의해 부모가 바뀌는 불상사를 막기 위해 자식이 부모에게 data를 전달할 수 없음즉, 하위 컴포넌트의 템플릿에서 상위 데이터를 직접 참조 할 수 없으며 그렇게 해서는 안됨. 데이터는 props 옵션 을 사용하여 하위 컴포넌트로 전달 될 수 있음
+
+
+## 비 부모-자식간 통신
+#### 부모와 자식간에는 props, emit을 이용해 통신을 하였지만 컴포넌트끼리 통신이 필요한 경우도 있음<br/>이벤트 버스를 이용
+
+```javascript
+const eventBus = new Vue();
+ 
+Vue.component('child-component1', {
+    template: '<div>컴포넌트1<button @click="eventBusTest">show</button></div>',
+    methods: {
+      eventBusTest() {
+        eventBus.$emit('busEvent', 100);
+        }
+    }
+});
+ 
+Vue.component('child-component2', {
+    template: '<div>컴포넌트2 값 : {{ number }}</div>',
+    created: function() {
+        const self = this;
+        eventBus.$on('busEvent', function(value){
+          self.number += value;
+        });
+    },
+    data: function() {
+        return {
+          number : 0
+        }
+    }
+});
+```
+
+## slot
+#### 하위 컴포넌트 템플릿에 최소한 하나의 slot 콘텐츠가 포함되어 있지 않으면 부모 콘텐츠가 삭제 됨<br/> 따라서, element를 유동적으로 사용하고자 하면 template에 slot을 작성
 
 
 ### Vue.js Reference Guide
